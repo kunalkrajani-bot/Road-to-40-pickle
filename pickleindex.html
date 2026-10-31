@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Road to 40</title>
+<meta name="apple-mobile-web-app-title" content="Road to 40">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-512.png">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Road%20to%2040%22%2C%22short_name%22%3A%22Road%20to%2040%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22browser%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22icon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+<meta name="theme-color" content="#1D4F8A">
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#1D4F8A;color:#fff;font-family:system-ui,-apple-system,sans-serif;text-align:center;padding:24px;box-sizing:border-box}
+  img{width:120px;height:120px;border-radius:26px;margin-bottom:20px}
+  h1{font-size:24px;margin:0 0 10px}
+  p{font-size:17px;line-height:1.5;max-width:340px;margin:0 auto 10px;opacity:.92}
+</style>
+<script>
+  var TRACKER = "https://claude.ai/artifact/LxbTyAdY5yXxY1R1VFUk9P";
+  if (location.hash === "#setup") {
+    // Setup mode: stay here and clean the address so the home-screen icon saves the plain link
+    history.replaceState(null, "", location.pathname);
+    window.SETUP = true;
+  } else {
+    location.replace(TRACKER);
+  }
+</script>
+</head>
+<body>
+  <div>
+    <img src="apple-touch-icon.png" alt="">
+    <h1 id="t">Opening your tracker…</h1>
+    <p id="m"></p>
+  </div>
+<script>
+  if (window.SETUP) {
+    document.getElementById("t").textContent = "Add Road to 40 to your home screen";
+    document.getElementById("m").innerHTML = "Tap the <b>Share</b> button, then <b>Add to Home Screen</b>, then <b>Add</b>.<br><br>From then on, the icon opens your tracker straight away.";
+  }
+</script>
+</body>
+</html>
